@@ -1,8 +1,8 @@
 import 'package:docdoc/core/helpers/extensions.dart';
 import 'package:docdoc/core/routing/routes.dart';
 import 'package:docdoc/core/theme/styles.dart';
-import 'package:docdoc/features/auth/presentation/manager/auth/login_cubit.dart';
-import 'package:docdoc/features/auth/presentation/manager/auth/login_state.dart';
+import 'package:docdoc/features/auth/presentation/manager/login/login_cubit.dart';
+import 'package:docdoc/features/auth/presentation/manager/login/login_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

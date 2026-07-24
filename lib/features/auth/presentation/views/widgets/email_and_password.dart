@@ -1,6 +1,6 @@
 import 'package:docdoc/core/helpers/app_regex.dart';
 import 'package:docdoc/core/widgets/app_text_form_field.dart';
-import 'package:docdoc/features/auth/presentation/manager/auth/login_cubit.dart';
+import 'package:docdoc/features/auth/presentation/manager/login/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gap/flutter_gap.dart';
@@ -28,21 +28,6 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
   void initState() {
     super.initState();
     passwordController = context.read<LoginCubit>().passwordController;
-    setupPasswordControllerListener();
-  }
-
-  void setupPasswordControllerListener() {
-    passwordController.addListener(() {
-      setState(() {
-        // hasLowercase = AppRegex.hasLowerCase(passwordController.text);
-        // hasUppercase = AppRegex.hasUpperCase(passwordController.text);
-        // hasSpecialCharacters = AppRegex.hasSpecialCharacter(
-        //   passwordController.text,
-        // );
-        // hasNumber = AppRegex.hasNumber(passwordController.text);
-        // hasMinLength = AppRegex.hasMinLength(passwordController.text);
-      });
-    });
   }
 
   @override
@@ -73,7 +58,7 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
                   isObscureText = !isObscureText;
                 });
               },
-              child: Icon(   
+              child: Icon(
                 isObscureText ? Icons.visibility_off : Icons.visibility,
               ),
             ),
@@ -84,13 +69,6 @@ class _EmailAndPasswordState extends State<EmailAndPassword> {
             },
           ),
           Gap(24.h),
-          // PasswordValidations(
-          //   hasLowerCase: hasLowercase,
-          //   hasUpperCase: hasUppercase,
-          //   hasSpecialCharacters: hasSpecialCharacters,
-          //   hasNumber: hasNumber,
-          //   hasMinLength: hasMinLength,
-          // ),
         ],
       ),
     );

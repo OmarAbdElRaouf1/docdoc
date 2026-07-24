@@ -1,9 +1,13 @@
 import 'package:docdoc/core/theme/styles.dart';
 import 'package:docdoc/core/widgets/app_text_button.dart';
+import 'package:docdoc/features/auth/presentation/manager/auth/login_cubit.dart';
+import 'package:docdoc/features/auth/presentation/manager/auth/login_state.dart';
 import 'package:docdoc/features/auth/presentation/views/widgets/dony_have_account.dart';
 import 'package:docdoc/features/auth/presentation/views/widgets/email_and_password.dart';
+import 'package:docdoc/features/auth/presentation/views/widgets/login_bloc_listener.dart';
 import 'package:docdoc/features/auth/presentation/views/widgets/terms_and_conditions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gap/flutter_gap.dart';
 import 'package:flutter_screenutil_plus/flutter_screenutil_plus.dart';
 
@@ -43,15 +47,24 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                       Gap(40),
-                      AppTextButton(
-                        buttonText: "Login",
-                        textStyle: TextStyles.font16WhiteSemiBold,
-                        onPressed: () {},
+                      BlocBuilder<LoginCubit, LoginState>(
+                        builder: (context, state) {
+                          return AppTextButton(
+                            buttonText: state is Loading
+                                ? "Logging in..."
+                                : "Login",
+                            textStyle: TextStyles.font16WhiteSemiBold,
+                            onPressed: () {
+                              validateThenDoLogin(context);
+                            },
+                          );
+                        },
                       ),
                       Gap(16),
                       const TermsAndConditionsText(),
                       Gap(60),
                       const DontHaveAccountText(),
+                      const LoginBlocListener(),
                     ],
                   ),
                 ],
@@ -61,5 +74,11 @@ class LoginScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void validateThenDoLogin(BuildContext context) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginStates();
+    }
   }
 }

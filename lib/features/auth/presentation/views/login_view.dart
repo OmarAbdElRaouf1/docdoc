@@ -1,8 +1,8 @@
 import 'package:docdoc/core/theme/styles.dart';
 import 'package:docdoc/core/widgets/app_text_button.dart';
-import 'package:docdoc/features/auth/presentation/manager/auth/login_cubit.dart';
-import 'package:docdoc/features/auth/presentation/manager/auth/login_state.dart';
-import 'package:docdoc/features/auth/presentation/views/widgets/dony_have_account.dart';
+import 'package:docdoc/features/auth/presentation/manager/login/login_cubit.dart';
+import 'package:docdoc/features/auth/presentation/manager/login/login_state.dart';
+import 'package:docdoc/features/auth/presentation/views/widgets/dont_have_account.dart';
 import 'package:docdoc/features/auth/presentation/views/widgets/email_and_password.dart';
 import 'package:docdoc/features/auth/presentation/views/widgets/login_bloc_listener.dart';
 import 'package:docdoc/features/auth/presentation/views/widgets/terms_and_conditions.dart';

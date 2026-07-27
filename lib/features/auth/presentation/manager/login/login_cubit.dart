@@ -3,7 +3,6 @@ import 'package:docdoc/core/helpers/constants.dart';
 import 'package:docdoc/core/helpers/shared_pref_helper.dart';
 import 'package:docdoc/core/networking/api_result.dart';
 import 'package:docdoc/core/networking/dio_factory.dart';
-import 'package:docdoc/features/auth/data/models/login_response.dart';
 import 'package:docdoc/features/auth/data/repos/login_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,8 +1,5 @@
-import 'package:docdoc/core/theme/styles.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/routing/routes.dart';
-import '../helpers/extensions.dart';
 import '../theme/app_colors.dart';
 
 class AppTextButton extends StatelessWidget {

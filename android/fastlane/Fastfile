@@ -9,11 +9,11 @@ platform :android do
     sh "flutter build apk --release --flavor production --target lib/main_production.dart --no-tree-shake-icons"
      firebase_app_distribution(
     app: "1:694089977931:android:9260eeb5d9b9210adb7dce",
-    firebase_cli_token: ENV["FIREBASE_TOKEN"],
+    firebase_cli_token: ENV["FIREBASE_CLI_TOKEN"],
     android_artifact_type: "APK",
     android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
     testers: "omarahmed3330000@gmail.com",
-    release_notes: "This is a first Fastlane release for the Android app."
+    release_notes: "This is a second Fastlane release for the Android app."
   )
   end
 end
